@@ -3,7 +3,7 @@ import numpy as np
 import joblib
 
 data = pd.read_csv("crop_data1.csv")
-# data["Water Required (ml)"]=(data["Water Required (ml)"]/100000).round(1)
+
 data["Rainfall (mm)"]=data["Rainfall (mm)"].round(1)
 data=data.drop(["Wind Speed (km/h)"],axis=1)
 data["Water Level (cm)"]=data["Water Level (cm)"].round(1)
@@ -20,14 +20,11 @@ if missing_cols:
 
 df_encoded = pd.get_dummies(data, columns=categories, dtype=int, drop_first=True)
 
-# X=df_encoded.drop(["Water Required (ml)"],axis=1)
-# Y=df_encoded["Water Required (ml)"]
 
 X=df_encoded
 
 model = joblib.load('lightgbm_model.pkl')
 
-# Make predictions on test data
 predictions = model.predict(X)
 final = pd.DataFrame({
     'To water': predictions
