@@ -1,0 +1,13 @@
+{
+  "projects": {},
+  "targets": {
+    "t-lexicon-452316-n5": {
+      "hosting": {
+        "rock-irrigation-app": [
+          "rock-irrigation-app-2"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
