@@ -1,0 +1,8 @@
+start node server.js
+then python app_api_integrated.py
+then run login page
+
+
+also download 
+flask Xgboost using python
+install node.js
